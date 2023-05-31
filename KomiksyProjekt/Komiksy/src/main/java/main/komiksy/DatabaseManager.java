@@ -1,23 +1,24 @@
 package main.komiksy;
-import com.sun.source.tree.WhileLoopTree;
 
-import java.nio.file.FileSystemAlreadyExistsException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterDao {
-    private String dbUrl = "jdbc:sqlite:C:\\Users\\Karolina\\Desktop\\grela - laby_prpjekt\\KomiksyProjekt\\Komiksy\\src\\main\\webapp\\baza_komiksy.sqlite";
+public class DatabaseManager {
+	//"jdbc:sqlite:C:\\Users\\Karolina\\Desktop\\grela - laby_prpjekt\\KomiksyProjekt\\Komiksy\\src\\main\\webapp\\baza_komiksy.sqlite"
+    //jdbc:sqlite:C:\\Users\\artur\\Desktop\\ProjektTI\\KomiksyProjekt2\\Komiksy\\src\\main\\webapp\\baza_komiksy.sqlite
+
+    private String dbUrl = "jdbc:sqlite:C:\\\\Users\\\\artur\\\\Desktop\\\\ProjektTI\\\\KomiksyProjekt\\\\Komiksy\\\\src\\\\main\\\\webapp\\\\baza_komiksy.sqlite";
     private String dbDriver = "org.sqlite.JDBC";
     private Connection connection;
-    public RegisterDao() {
+    public DatabaseManager() {
         connection = null;
         loadDriver(dbDriver);
         setConnection();
     }
 
-    public String WybierzElement(Map<Integer, Map< String, String > > map_in, int idx, String column)
+    public String getRowFromGivenTable(Map<Integer, Map< String, String > > map_in, int idx, String column)
     {
         if (idx > map_in.size())
         {
@@ -99,20 +100,28 @@ public class RegisterDao {
         return result;
     }
 
-    public boolean validateUser(String uname,String password)
+    public boolean validateUserAndFillData(String uname, String password, ArrayList<String> userData)
     {
         boolean status=false;
         try{
 
             PreparedStatement ps=getConnection().prepareStatement(
-                    "select permission from member where uname=? and password=?");
+                    "select * from member where uname=? and password=?");
             ps.setString(1,uname);
             ps.setString(2,password);
 
             ResultSet rs=ps.executeQuery();
-            status=rs.next();
 
-            //select * from member where uname=? and password=?
+            while(rs.next())
+            {
+                System.out.println("rs next");
+                userData.add(uname);
+                userData.add(password);
+                userData.add(rs.getString(rs.findColumn("email")));
+                userData.add(rs.getString(rs.findColumn("phone")));
+                userData.add(rs.getString(rs.findColumn("permission")));
+            }
+            return !userData.isEmpty();
 
         }catch(Exception e){System.out.println(e);}
         return status;
@@ -191,6 +200,7 @@ public class RegisterDao {
 
 
 }
+
 //    public String getUser(String uname, String password) {
 //        Member member = null;
 //        loadDriver(dbDriver);

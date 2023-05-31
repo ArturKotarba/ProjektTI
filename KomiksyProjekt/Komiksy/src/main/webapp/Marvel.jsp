@@ -1,11 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="main.komiksy.RegisterDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="main.komiksy.Member" %>
+<%@ page import="javax.xml.crypto.Data" %>
+<%@ page import="main.komiksy.DatabaseManager" %>
 
 <%
-    RegisterDao Marvel = new RegisterDao();
+    DatabaseManager Marvel = new DatabaseManager();
     Marvel.getAllDataFromTable("Marvel");
     Map<Integer, Map< String, String > > MarvelTable =  Marvel.getAllDataFromTable("Marvel");
     //System.out.println("DCTable: " + DCTable);
@@ -113,119 +114,119 @@
 </div>
 
 <div id="komiksy">
-    <h3><%=Marvel.WybierzElement(MarvelTable, 1, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 1, "Tytuł")%></h3>
     <img src="covery/Avengers. Powrót Gwiezdnego Piętna.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 1, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 1, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 1, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 1, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 1, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 1, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 1, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 1, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 2, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 2, "Tytuł")%></h3>
     <img src="covery/Amazing Spider-Man. 2099. Tom 7.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 2, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 2, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 2, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 2, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 2, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 2, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 2, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 2, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 3, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 3, "Tytuł")%></h3>
     <img src="covery/Venom. Tom 3.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 3, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 3, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 3, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 3, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 3, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 3, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 3, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 3, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 4, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 4, "Tytuł")%></h3>
     <img src="covery/Strażnicy Galaktyki. Bez wiary. Tom 2.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 4, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 4, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 4, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 4, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 4, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 4, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 4, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 4, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 5, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 5, "Tytuł")%></h3>
     <img src="covery/Uncanny X-Men. Cyclops i Wolverine. Tom 2.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 5, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 5, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 5, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 5, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 5, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 5, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 5, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 5, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 6, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 6, "Tytuł")%></h3>
     <img src="covery/Ród X, Potęgi X.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 6, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 6, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 6, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 6, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 6, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 6, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 6, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 6, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 7, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 7, "Tytuł")%></h3>
     <img src="covery/Empireum.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 7, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 7, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 7, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 7, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 7, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 7, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 7, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 7, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 8, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 8, "Tytuł")%></h3>
     <img src="covery/Spidergedon.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 8, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 8, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 8, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 8, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 8, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 8, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 8, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 8, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=Marvel.WybierzElement(MarvelTable, 9, "Tytuł")%></h3>
+    <h3><%=Marvel.getRowFromGivenTable(MarvelTable, 9, "Tytuł")%></h3>
     <img src="covery/Król Thor.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 9, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 9, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 9, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.WybierzElement(MarvelTable, 9, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 9, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 9, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 9, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=Marvel.getRowFromGivenTable(MarvelTable, 9, "Opis")%></th></tr>
         </table>
     </div>
 

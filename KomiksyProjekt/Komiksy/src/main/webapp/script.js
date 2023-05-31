@@ -18,14 +18,25 @@ var currentSlide = 0;
 
 // Funkcja zmieniająca zdjęcie co 5 sekundy
 function changeSlide() {
-    // Przesuwanie kontenera o szerokość jednego zdjęcia w lewo
-    slidesContainer.style.transform = "translateX(-" + (100 * currentSlide) + "%)";
 
-    // Zwiększanie indeksu o 1
-    currentSlide = (currentSlide + 1) % slidesContainer.children.length;
+    var _img = document.getElementById('tank');
+    _img.style.visibility = 'visible';
+    // var newImg = new Image;
+    // newImg.onload = function() {
+    //     _img.src = this.src;
+    // }
+    // newImg.src = 'covery/Marvel_spot.png';
+
+
+
+    // // Przesuwanie kontenera o szerokość jednego zdjęcia w lewo
+    // slidesContainer.style.transform = "translateX(-" + (100 * currentSlide) + "%)";
+    //
+    // // Zwiększanie indeksu o 1
+    // currentSlide = (currentSlide + 1) % slidesContainer.children.length;
 
     // Uruchamianie funkcji zmieniającej zdjęcie co 5 sekundy
-    setTimeout(changeSlide, 5000);
+    setTimeout(changeSlide, 500);
 }
 
 // Rozpoczęcie zmiany zdjęć po załadowaniu strony
@@ -76,6 +87,7 @@ function wyslijAsynchronicznie(url, metoda, typDanych, przeslanyDokument) {
     return request;
 
 }
+
 
 function wypelnijPoleTekstowe(value)
 {

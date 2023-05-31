@@ -1,13 +1,11 @@
 package main.komiksy;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
-import main.komiksy.RegisterDao;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -45,7 +43,7 @@ public class Wyszukiwanie extends HttpServlet {
         ArrayList<String> sugestia = new ArrayList<>();
         System.out.println("query = " + query);
 
-        RegisterDao query_ = new RegisterDao();
+        DatabaseManager query_ = new DatabaseManager();
 
 
         try {

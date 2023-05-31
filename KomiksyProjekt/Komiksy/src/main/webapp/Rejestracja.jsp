@@ -19,7 +19,7 @@
 <body>
 <div class="wrapper">
     <h2>Registration</h2>
-    <form action="hello-servlet" method="post">
+    <form action="register" method="post">
         <div class="input-box">
             <input type="text" name="uname" placeholder="Enter your User Name" required>
         </div>

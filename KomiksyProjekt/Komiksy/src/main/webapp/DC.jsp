@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="main.komiksy.RegisterDao" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="main.komiksy.Member" %>
+<%@ page import="main.komiksy.DatabaseManager" %>
 
 <%
-    RegisterDao DC = new RegisterDao();
+    DatabaseManager DC = new DatabaseManager();
     DC.getAllDataFromTable("DC");
     Map<Integer, Map< String, String > > DCTable =  DC.getAllDataFromTable("DC");
     //System.out.println("DCTable: " + DCTable);
@@ -113,120 +113,120 @@
 </div>
 
 <div id="komiksy">
-    <h3><%=DC.WybierzElement(DCTable, 1, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 1, "Tytuł")%></h3>
     <img src="covery/batman-detective.png" height="560" width="350">
 
     <div class="table">
     <table>
-        <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 1, "Scenariusz")%></th></tr>
-        <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 1, "Rysunki")%></th></tr>
-        <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 1, "Data_wydania")%></th></tr>
-        <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 1, "Opis")%></th></tr>
+        <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 1, "Scenariusz")%></th></tr>
+        <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 1, "Rysunki")%></th></tr>
+        <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 1, "Data_wydania")%></th></tr>
+        <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 1, "Opis")%></th></tr>
     </table>
     </div>
 
 
 
-        <h3><%=DC.WybierzElement(DCTable, 2, "Tytuł")%></h3>
+        <h3><%=DC.getRowFromGivenTable(DCTable, 2, "Tytuł")%></h3>
         <img src="covery/Uniwersum DC - Odrodzenie.jpg" height="560" width="350">
 
         <div class="table">
             <table>
-                <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 2, "Scenariusz")%></th></tr>
-                <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 2, "Rysunki")%></th></tr>
-                <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 2, "Data_wydania")%></th></tr>
-                <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 2, "Opis")%></th></tr>
+                <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 2, "Scenariusz")%></th></tr>
+                <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 2, "Rysunki")%></th></tr>
+                <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 2, "Data_wydania")%></th></tr>
+                <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 2, "Opis")%></th></tr>
             </table>
         </div>
 
 
-    <h3><%=DC.WybierzElement(DCTable, 3, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 3, "Tytuł")%></h3>
     <img src="covery/Uniwersum DC - Lewiatan.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 3, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 3, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 3, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 3, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 3, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 3, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 3, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 3, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=DC.WybierzElement(DCTable, 4, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 4, "Tytuł")%></h3>
     <img src="covery/DC Deluxe Authority.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 4, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 4, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 4, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 4, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 4, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 4, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 4, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 4, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=DC.WybierzElement(DCTable, 5, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 5, "Tytuł")%></h3>
     <img src="covery/DC Deluxe Authority.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 5, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 5, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 5, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 5, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 5, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 5, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 5, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 5, "Opis")%></th></tr>
         </table>
     </div>
 
 
 
-    <h3><%=DC.WybierzElement(DCTable, 6, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 6, "Tytuł")%></h3>
     <img src="covery/DC Deluxe Uniwersum DC według Mike'a Mignoli.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 6, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 6, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 6, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 6, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 6, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 6, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 6, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 6, "Opis")%></th></tr>
         </table>
     </div>
 
-    <h3><%=DC.WybierzElement(DCTable, 7, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 7, "Tytuł")%></h3>
     <img src="covery/DC Limited Strażnicy.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 7, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 7, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 7, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 7, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 7, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 7, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 7, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 7, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=DC.WybierzElement(DCTable, 8, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 8, "Tytuł")%></h3>
     <img src="covery/DC Deluxe Nowa granica.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 8, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 8, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 8, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 8, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 8, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 8, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 8, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 8, "Opis")%></th></tr>
         </table>
     </div>
 
 
-    <h3><%=DC.WybierzElement(DCTable, 9, "Tytuł")%></h3>
+    <h3><%=DC.getRowFromGivenTable(DCTable, 9, "Tytuł")%></h3>
     <img src="covery/DC Deluxe Najjaśniejszy dzień.png" height="560" width="350">
 
     <div class="table">
         <table>
-            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 9, "Scenariusz")%></th></tr>
-            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 9, "Rysunki")%></th></tr>
-            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 9, "Data_wydania")%></th></tr>
-            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.WybierzElement(DCTable, 9, "Opis")%></th></tr>
+            <tr><th style="width: 50px">Scenariusz: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 9, "Scenariusz")%></th></tr>
+            <tr><th style="width: 50px">Rysunki: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 9, "Rysunki")%></th></tr>
+            <tr><th style="width: 50px">Data wydania: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 9, "Data_wydania")%></th></tr>
+            <tr><th style="width: 50px">Opis: </th><th style="width: 500px"><%=DC.getRowFromGivenTable(DCTable, 9, "Opis")%></th></tr>
         </table>
     </div>
 

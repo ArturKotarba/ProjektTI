@@ -5,6 +5,7 @@
     Member kKuzytkownik = (Member) session.getAttribute("uzytkownik");
     if (kKuzytkownik == null)
     {
+        System.out.println("kKuzytkonwik null");
         kKuzytkownik = new Member();
         session.setAttribute("uzytkownik", kKuzytkownik);
     }
@@ -33,18 +34,15 @@
         </a>
     </div>
 
-    <div class="log">
-        <% if(kKuzytkownik.getPermission() == "user" || kKuzytkownik.getPermission() == "admin" ) { %>
-        <p>Jesteś zalogowany jako <b><%=kKuzytkownik.getUname()%></b></p>
+    <div id="log">
+        <% if(kKuzytkownik.getPermission().equals("user") || kKuzytkownik.getPermission().equals("admin") ) { %>
+        Jesteś zalogowany jako <b><%=kKuzytkownik.getUname()%></b>
         <form action="logout" method="post">
-            <input type="submit" value="Wyloguj"></br>
+            <input type="submit" value="wyloguj"></br>
         </form>
         <% } else { %>
         <% } %>
     </div>
-
-
-
 
     <div class="srodek">
         <nav>
@@ -70,7 +68,7 @@
                     <li><a href="Marvel.jsp">Marvel</a></li>
                     <li><a href="Logowanie.jsp">Logowanie</a></li>
                     <li><a href="Rejestracja.jsp">Rejestracja</a></li>
-                    <% if(kKuzytkownik.getPermission() == "admin") { %>
+                    <% if(kKuzytkownik.getPermission().equals("admin")) { %>
                     <li><a href="Zarządzanie.jsp">Zarządzanie</a></li>
                     <% } else { %>
                     <% } %>
@@ -80,9 +78,12 @@
     </div>
     <div class="slideshow-container">
         <div class="slides">
-            <img class="slider-image" src="covery/DC_spot.png" height="357" width="1041" alt="Zdjęcie 1">
-            <img class="slider-image" src="covery/Marvel_spot.png" height="317" width="982" alt="Zdjęcie 2">
-            <img class="slider-image" src="covery/comics.png" height="357" width="883" alt="Zdjęcie 3">
+            <img id="tank" style="position:absolute; "src="covery/DC_spot.png" height="357" width="1041"/>
+<%--            <img id="tank2" style="position:absolute;"src="covery/Marvel_spot.png"/>--%>
+<%--            <img id="tank3" style="position:absolute;"src="covery/comics.png"/>--%>
+<%--            <img class="slider-image" src="covery/DC_spot.png" height="357" width="1041" alt="Zdjęcie 1">--%>
+<%--            <img class="slider-image" src="covery/Marvel_spot.png" height="317" width="982" alt="Zdjęcie 2">--%>
+<%--            <img class="slider-image" src="covery/comics.png" height="357" width="883" alt="Zdjęcie 3">--%>
         </div>
     </div>
 </div>

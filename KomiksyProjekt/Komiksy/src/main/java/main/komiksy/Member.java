@@ -50,6 +50,11 @@ public class Member {
         this.phone = phone;
     }
 
+    public void setPermission(String permission)
+    {
+        this.permission = permission;
+    }
+
 
     public String getPermission()
     {
